@@ -6,9 +6,11 @@ import { checkOwnerNFTs, nftOwnerAddress } from './nftOwnerAddress'
 
 export class SolanaUtils {
   public connection: Connection
+  public options: SolanaUtilsOptions
 
   constructor(options: SolanaUtilsOptions) {
     this.connection = new Connection(options.endpoint)
+    this.options = options
   }
 
   async getStakeAccountBalance(this: SolanaUtils, stakeAccountAddress: string) {

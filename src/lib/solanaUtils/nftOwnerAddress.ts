@@ -1,15 +1,24 @@
 import { PublicKey } from '@solana/web3.js'
 import { SolanaUtils } from '.'
-import { Metaplex } from '@metaplex-foundation/js'
+import { createUmi } from '@metaplex-foundation/umi-bundle-defaults'
+import { fetchAllDigitalAssetByOwner } from '@metaplex-foundation/mpl-token-metadata'
+import { fromWeb3JsPublicKey } from '@metaplex-foundation/umi-web3js-adapters'
 
 export const nftOwnerAddress = async (
   solanaUtils: SolanaUtils,
   userWalletAddress: string,
 ) => {
-  const metaplex = new Metaplex(solanaUtils.connection)
-  const ownerAddress = new PublicKey(userWalletAddress)
-  const owner = await metaplex.nfts().findAllByOwner({ owner: ownerAddress })
-  return owner
+  try {
+    const publicKey = new PublicKey(userWalletAddress)
+    const umi = createUmi(solanaUtils.options.endpoint)
+    const nfts = await fetchAllDigitalAssetByOwner(
+      umi,
+      fromWeb3JsPublicKey(publicKey),
+    )
+    return nfts
+  } catch (error) {
+    throw new Error(`Failed to fetch NFTs for address: ${userWalletAddress}`)
+  }
 }
 
 export const nftCollectionOwnerAddress = async (
@@ -19,15 +28,18 @@ export const nftCollectionOwnerAddress = async (
 ) => {
   try {
     const ownerNFTs = await nftOwnerAddress(solanaUtils, userWalletAddress)
-    const bdlc = ownerNFTs.filter((nft) => {
-      const collectionId = nft.collection?.address.toBase58()
-      if (collectionId === collectionAddress) {
-        return nft
+    const collectionNFTs = ownerNFTs.filter((nft) => {
+      const collection: any = nft.metadata.collection
+      if (collection.__option === 'Some') {
+        if (collection.value.key === collectionAddress) {
+          return collection.value.key
+        }
       }
     })
-    return bdlc.map((nft) => {
-      return nft.address.toBase58()
+    const nftAddresses = collectionNFTs.map((nft) => {
+      return nft.metadata.mint
     })
+    return nftAddresses as string[]
   } catch (error) {
     throw new Error(`Failed to fetch NFTs for address: ${userWalletAddress}`)
   }
@@ -44,7 +56,7 @@ export const checkOwnerNFTs = async (
     userWalletAddress,
     collectionAddress,
   )
-  const noPermissions = nftAddresses.filter((nftAddress) => {
+  const noPermissions = nftAddresses.filter((nftAddress: string) => {
     if (!ownerNFTs.includes(nftAddress)) {
       return nftAddress
     }
