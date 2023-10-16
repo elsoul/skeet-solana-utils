@@ -1,0 +1,146 @@
+[
+  {
+    "model": "metadata",
+    "address": "APdg7MdkvBvAVJPNTW6wpvvxLcY9DN6CLUFFT6QQMpwy",
+    "mintAddress": "2oAJxTmmNnfk4zBdqyny4qEVCHd95tov8rQEvxNQiVU9",
+    "updateAuthorityAddress": "6R4UtEUuJPBTYk8QXh7muHqbsujkNEvc4dV7otNCbxb5",
+    "json": null,
+    "jsonLoaded": false,
+    "name": "Bozo Collective #3208",
+    "symbol": "Bozo",
+    "uri": "https://bafybeibt2qmt36waegric6em3ylvtjvrrvtusqn523tvnv7rklgurc6jn4.ipfs.nftstorage.link/3208.json",
+    "isMutable": true,
+    "primarySaleHappened": true,
+    "sellerFeeBasisPoints": 750,
+    "editionNonce": 255,
+    "creators": [
+      {
+        "address": "CoFf2S1Qp9vzx2usXPaPvggmwjMvY2b7ADLMbVg1bMUd",
+        "verified": true,
+        "share": 0
+      },
+      {
+        "address": "FfrvJFVapdJd9rjb37x3rjsbcQ4FQVWQP2yPuQVWbF5p",
+        "verified": false,
+        "share": 100
+      }
+    ],
+    "tokenStandard": 4,
+    "collection": {
+      "verified": true,
+      "key": "uKmG23zipaSra6PPMWnc1M3avmUxaH4DeK28sjxWX6k",
+      "address": "uKmG23zipaSra6PPMWnc1M3avmUxaH4DeK28sjxWX6k"
+    },
+    "collectionDetails": null,
+    "uses": null,
+    "programmableConfig": {
+      "__kind": "V1",
+      "ruleSet": "B7biz4Qresq8ZkvUQ77mBq6ZkF5FKmfBTs7KpqVoVtZw"
+    }
+  },
+  {
+    "model": "metadata",
+    "address": "7w55s9xQyeotwcSzRCmv84f1cbjhhe5d7MfYC4gyJbAR",
+    "mintAddress": "936EJpHPbPJ1nDRhNL3Hye5R2Xc6AkJQvrT6DzvCD1Sw",
+    "updateAuthorityAddress": "6R4UtEUuJPBTYk8QXh7muHqbsujkNEvc4dV7otNCbxb5",
+    "json": null,
+    "jsonLoaded": false,
+    "name": "Bozo Collective #3908",
+    "symbol": "Bozo",
+    "uri": "https://bafybeibt2qmt36waegric6em3ylvtjvrrvtusqn523tvnv7rklgurc6jn4.ipfs.nftstorage.link/3908.json",
+    "isMutable": true,
+    "primarySaleHappened": true,
+    "sellerFeeBasisPoints": 750,
+    "editionNonce": 255,
+    "creators": [
+      {
+        "address": "CoFf2S1Qp9vzx2usXPaPvggmwjMvY2b7ADLMbVg1bMUd",
+        "verified": true,
+        "share": 0
+      },
+      {
+        "address": "FfrvJFVapdJd9rjb37x3rjsbcQ4FQVWQP2yPuQVWbF5p",
+        "verified": false,
+        "share": 100
+      }
+    ],
+    "tokenStandard": 4,
+    "collection": {
+      "verified": true,
+      "key": "uKmG23zipaSra6PPMWnc1M3avmUxaH4DeK28sjxWX6k",
+      "address": "uKmG23zipaSra6PPMWnc1M3avmUxaH4DeK28sjxWX6k"
+    },
+    "collectionDetails": null,
+    "uses": null,
+    "programmableConfig": {
+      "__kind": "V1",
+      "ruleSet": "B7biz4Qresq8ZkvUQ77mBq6ZkF5FKmfBTs7KpqVoVtZw"
+    }
+  },
+  {
+    "model": "metadata",
+    "address": "3H6piBXjigv4iC4ND6Qnfoa3YkpVAuM1YhPaR7Chn2Mm",
+    "mintAddress": "4PoRgd3x1xW3UWn1rmsooLjmyk81BFKyF8CCLyCM5YJE",
+    "updateAuthorityAddress": "DpyfCG9at8SzL31cxnjvFafn8nbNzcGHZTmNkRMuGsmP",
+    "json": null,
+    "jsonLoaded": false,
+    "name": "Crafty Shoes 1",
+    "symbol": "",
+    "uri": "https://arweave.net/9bMqZG9aCu9bCbilTQYuWCyDCCOXLdd6s5YalNDTn74",
+    "isMutable": true,
+    "primarySaleHappened": false,
+    "sellerFeeBasisPoints": 100,
+    "editionNonce": 249,
+    "creators": [
+      {
+        "address": "DpyfCG9at8SzL31cxnjvFafn8nbNzcGHZTmNkRMuGsmP",
+        "verified": true,
+        "share": 100
+      }
+    ],
+    "tokenStandard": 0,
+    "collection": null,
+    "collectionDetails": null,
+    "uses": null,
+    "programmableConfig": null
+  },
+  {
+    "model": "metadata",
+    "address": "xbVudCoAiguvuw9H8SuSh6UZ8i5mEerHiEFWyru7RRT",
+    "mintAddress": "3uEhL1j2oy6QzJAQtyk4bxQpzJ7586HZYvRPBTQHWSiz",
+    "updateAuthorityAddress": "6R4UtEUuJPBTYk8QXh7muHqbsujkNEvc4dV7otNCbxb5",
+    "json": null,
+    "jsonLoaded": false,
+    "name": "Bozo Collective #5185",
+    "symbol": "Bozo",
+    "uri": "https://bafybeibt2qmt36waegric6em3ylvtjvrrvtusqn523tvnv7rklgurc6jn4.ipfs.nftstorage.link/5185.json",
+    "isMutable": true,
+    "primarySaleHappened": true,
+    "sellerFeeBasisPoints": 750,
+    "editionNonce": 253,
+    "creators": [
+      {
+        "address": "CoFf2S1Qp9vzx2usXPaPvggmwjMvY2b7ADLMbVg1bMUd",
+        "verified": true,
+        "share": 0
+      },
+      {
+        "address": "FfrvJFVapdJd9rjb37x3rjsbcQ4FQVWQP2yPuQVWbF5p",
+        "verified": false,
+        "share": 100
+      }
+    ],
+    "tokenStandard": 4,
+    "collection": {
+      "verified": true,
+      "key": "uKmG23zipaSra6PPMWnc1M3avmUxaH4DeK28sjxWX6k",
+      "address": "uKmG23zipaSra6PPMWnc1M3avmUxaH4DeK28sjxWX6k"
+    },
+    "collectionDetails": null,
+    "uses": null,
+    "programmableConfig": {
+      "__kind": "V1",
+      "ruleSet": "B7biz4Qresq8ZkvUQ77mBq6ZkF5FKmfBTs7KpqVoVtZw"
+    }
+  }
+]
