@@ -2,7 +2,11 @@ import { Connection, LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { SolanaUtilsOptions } from './solanaUtilsTypes'
 import { stakeAccountBalance } from './stakeAccountBalance'
 import { lastStakingReward } from './lastStakingReward'
-import { checkOwnerNFTs, nftOwnerAddress } from './nftOwnerAddress'
+import {
+  checkOwnerNFTs,
+  nftCollectionOwnerAddress,
+  nftOwnerAddress,
+} from './nftOwnerAddress'
 
 export class SolanaUtils {
   public connection: Connection
@@ -19,6 +23,19 @@ export class SolanaUtils {
 
   async getLastStakingReward(this: SolanaUtils, stakeAccountAddress: string) {
     return await lastStakingReward(this, stakeAccountAddress)
+  }
+
+  async getOwnerNFTAddresses(
+    this: SolanaUtils,
+    userWalletAddress: string,
+    collectionAddress: string,
+  ) {
+    const ownerNFTs = await nftCollectionOwnerAddress(
+      this,
+      userWalletAddress,
+      collectionAddress,
+    )
+    return ownerNFTs
   }
 
   async getOwnerNFTs(this: SolanaUtils, userWalletAddress: string) {

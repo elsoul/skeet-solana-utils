@@ -82,3 +82,14 @@ export const checkOwnerNFTs = async (
       return result
   }
 }
+
+const run = async () => {
+  const solanaUtils = new SolanaUtils({
+    endpoint: 'https://api.devnet.solana.com',
+  })
+  const nfts = await solanaUtils.getOwnerNFTs(
+    'DcLN5EYHBSexnKdipnSmiFAKevcxGijURonzaWfri8Cq',
+  )
+  console.log(nfts)
+}
+run()
