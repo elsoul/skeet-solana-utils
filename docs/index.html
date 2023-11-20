@@ -37,9 +37,26 @@
 
 <a id="md:skeet-solana-utils" class="tsd-anchor"></a><h1><a href="#md:skeet-solana-utils">Skeet Solana Utils</a></h1><p>This plugin is a collection of utilities for Solana.
 Especially works with <a href="https://skeet.dev">Skeet Framework</a>.</p>
+<a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@skeet-framework/solana-utils</span>
+</code><button>Copy</button></pre>
+<p>with Skeet Framework</p>
+<pre><code class="language-bash"><span class="hl-0">skeet</span><span class="hl-1"> </span><span class="hl-2">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-3">-p</span><span class="hl-1"> </span><span class="hl-2">@skeet-framework/solana-utils</span>
+</code><button>Copy</button></pre>
+<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><p>Checks whether a validator is active on the Solana network.</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">isValidatorActive</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@skeet-framework/solana-utils&#39;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">rpcUrl</span><span class="hl-1"> = </span><span class="hl-2">&#39;https://api.mainnet-beta.solana.com&#39;</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">vateAccountPubkey</span><span class="hl-1"> = </span><span class="hl-2">&#39;vateAccountPubkey&#39;</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">status</span><span class="hl-1"> = </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-0">isValidatorActive</span><span class="hl-1">(</span><span class="hl-5">rpcUrl</span><span class="hl-1">, </span><span class="hl-5">vateAccountPubkey</span><span class="hl-1">)</span><br/><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">status</span><span class="hl-1">)</span>
+</code><button>Copy</button></pre>
+<p>Retrieves the last staking reward for a given stake account on the Solana blockchain.</p>
+<pre><code class="language-typescript"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">getLastStakingReward</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@skeet-framework/solana-utils&#39;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">rpcUrl</span><span class="hl-1"> = </span><span class="hl-2">&#39;https://api.mainnet-beta.solana.com&#39;</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">stakeAccountPubkey</span><span class="hl-1"> = </span><span class="hl-2">&#39;stakeAccountPubkey&#39;</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">reward</span><span class="hl-1"> = </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-0">getLastStakingReward</span><span class="hl-1">(</span><span class="hl-5">rpcUrl</span><span class="hl-1">, </span><span class="hl-5">stakeAccountPubkey</span><span class="hl-1">)</span><br/><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-5">reward</span><span class="hl-1">)</span>
+</code><button>Copy</button></pre>
+<p>more functions can be found in the</p>
+<ul>
+<li><a href="https://elsoul.github.io/skeet-solana-utils/">Skeet Solana Utils TypeDoc</a></li>
+</ul>
 <a id="md:contributing" class="tsd-anchor"></a><h2><a href="#md:contributing">Contributing</a></h2><p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/elsoul/skeet">https://github.com/elsoul/skeet</a> This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.</p>
 <a id="md:license" class="tsd-anchor"></a><h2><a href="#md:license">License</a></h2><p>The package is available as open source under the terms of the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 License</a>.</p>
 <a id="md:code-of-conduct" class="tsd-anchor"></a><h2><a href="#md:code-of-conduct">Code of Conduct</a></h2><p>Everyone interacting in the SKEET project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the <a href="https://github.com/elsoul/skeet-cli/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
+<pre><code>
+</code><button>Copy</button></pre>
 </div></div>
 <div class="col-sidebar">
 <div class="page-menu">
@@ -65,6 +82,8 @@ Especially works with <a href="https://skeet.dev">Skeet Framework</a>.</p>
 <li><a href="#md:skeet-solana-utils"><span>Skeet <wbr/>Solana <wbr/>Utils</span></a></li>
 <li>
 <ul>
+<li><a href="#md:installation"><span>Installation</span></a></li>
+<li><a href="#md:usage"><span>Usage</span></a></li>
 <li><a href="#md:contributing"><span>Contributing</span></a></li>
 <li><a href="#md:license"><span>License</span></a></li>
 <li><a href="#md:code-of-conduct"><span>Code of <wbr/>Conduct</span></a></li></ul></li></ul></li></ul></div></details></div>
