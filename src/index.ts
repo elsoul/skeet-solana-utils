@@ -1,12 +1,21 @@
-// index.ts
-export { SolanaUtils } from '@/lib/solanaUtils'
+export { getLastStakingReward } from './lib/getLastStakingReward'
+export { getSolBalance } from './lib/getSolBalance'
+export { isValidatorActive } from './lib/isValidatorActive'
+export { getSPLTokenBalance } from './lib/getSPLTokenBalance'
+export { solanaTransfer } from './lib/solanaTransfer'
+export { getNftOwnerByTokenMint } from './lib/getNftOwnerByTokenMint'
+export { getNftAttributes } from './lib/getNftAttributes'
+export { getMagicEdenOwner } from './lib/getMagicEdenOwner'
+export { getNftsByWalletAddress } from './lib/getNftsByWalletAddress'
+export { getNftsByWalletAddressAndCollectionMint } from './lib/getNftsByWalletAddressAndCollectionMint'
 export type {
-  SolanaUtilsOptions,
   StakeRewardParams,
-} from '@/lib/solanaUtils/solanaUtilsTypes'
-export { stakeAccountBalance } from '@/lib/solanaUtils/stakeAccountBalance'
-export { lastStakingReward } from '@/lib/solanaUtils/lastStakingReward'
-export {
-  checkOwnerNFTs,
-  nftOwnerAddress,
-} from '@/lib/solanaUtils/nftOwnerAddress'
+  ValidatorStatusParams,
+  NftMetadata,
+  Creator,
+  File,
+  Properties,
+  Attribute,
+} from './solanaUtilsTypes'
+export { MAGIC_EDEN_ADDRESS } from './lib/getMagicEdenOwner'
+export type { DigitalAsset } from '@metaplex-foundation/mpl-token-metadata'

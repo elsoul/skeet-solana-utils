@@ -26,6 +26,46 @@
 This plugin is a collection of utilities for Solana.
 Especially works with [Skeet Framework](https://skeet.dev).
 
+## Installation
+
+```bash
+npm install @skeet-framework/solana-utils
+```
+
+with Skeet Framework
+
+```bash
+skeet yarn add -p @skeet-framework/solana-utils
+```
+
+## Usage
+
+Checks whether a validator is active on the Solana network.
+
+```typescript
+import { isValidatorActive } from '@skeet-framework/solana-utils'
+
+const rpcUrl = 'https://api.mainnet-beta.solana.com'
+const vateAccountPubkey = 'vateAccountPubkey'
+const status = await isValidatorActive(rpcUrl, vateAccountPubkey)
+console.log(status)
+```
+
+Retrieves the last staking reward for a given stake account on the Solana blockchain.
+
+```typescript
+import { getLastStakingReward } from '@skeet-framework/solana-utils'
+
+const rpcUrl = 'https://api.mainnet-beta.solana.com'
+const stakeAccountPubkey = 'stakeAccountPubkey'
+const reward = await getLastStakingReward(rpcUrl, stakeAccountPubkey)
+console.log(reward)
+```
+
+more functions can be found in the
+
+- [Skeet Solana Utils TypeDoc](https://elsoul.github.io/skeet-solana-utils/)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/elsoul/skeet This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
@@ -37,3 +77,7 @@ The package is available as open source under the terms of the [Apache-2.0 Licen
 ## Code of Conduct
 
 Everyone interacting in the SKEET project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/elsoul/skeet-cli/blob/master/CODE_OF_CONDUCT.md).
+
+```
+
+```
