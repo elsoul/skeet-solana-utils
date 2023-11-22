@@ -1,3 +1,5 @@
+import { ParsedAccountData } from '@solana/web3.js'
+
 /**
  * Parameters representing a stake reward.
  */
@@ -149,4 +151,47 @@ export type NftMetadata = {
    * The category of the NFT (e.g., art, collectible).
    */
   category: string
+}
+
+/**
+ * Represents the metadata associated with a Solana Stake Program account.
+ */
+export type ParsedStakeAccount = {
+  info: StakeInfo
+  type: string
+}
+
+export type StakeInfo = {
+  meta: StakeMeta
+  stake: StakeDetails
+}
+
+export type StakeMeta = {
+  authorized: StakeAuthorized
+  lockup: StakeLockup
+  rentExemptReserve: string
+}
+
+export type StakeAuthorized = {
+  staker: string
+  withdrawer: string
+}
+
+export type StakeLockup = {
+  custodian: string
+  epoch: number
+  unixTimestamp: number
+}
+
+export type StakeDetails = {
+  creditsObserved: number
+  delegation: StakeDelegation
+}
+
+export type StakeDelegation = {
+  activationEpoch: string
+  deactivationEpoch: string
+  stake: string
+  voter: string
+  warmupCooldownRate: number
 }
