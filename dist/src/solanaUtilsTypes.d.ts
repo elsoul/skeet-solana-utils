@@ -161,3 +161,10 @@ export type StakeDelegation = {
     voter: string;
     warmupCooldownRate: number;
 };
+export type RewardDataResponse = {
+    epoch: number;
+    pubkey: string;
+    totalRewardAmount: number;
+    totalBalance: number;
+    rewards: StakeRewardParams[];
+};
