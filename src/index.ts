@@ -11,6 +11,7 @@ export { getNftsByWalletAddressAndCollectionMint } from './lib/getNftsByWalletAd
 export { getStakeAccounts } from './lib/getStakeAccounts'
 export { delegateStake } from './lib/delegateStake'
 export { getAllStakeRewardsByPubkey } from './lib/getAllStakeRewardsByPubkey'
+export { getCurrentEpoch } from './lib/getCurrentEpoch'
 export type * from './solanaUtilsTypes'
 export { MAGIC_EDEN_ADDRESS } from './lib/getMagicEdenOwner'
 export type { DigitalAsset } from '@metaplex-foundation/mpl-token-metadata'
