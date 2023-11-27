@@ -1,5 +1,4 @@
-import { ParsedAccountData } from '@solana/web3.js'
-
+import { PublicKey } from '@solana/web3.js'
 /**
  * Parameters representing a stake reward.
  */
@@ -202,4 +201,88 @@ export type RewardDataResponse = {
   totalRewardAmount: number
   totalBalance: number
   rewards: StakeRewardParams[]
+}
+
+export type TokenTransferInfo = {
+  amount: string
+  authority: string
+  destination: string
+  source: string
+}
+
+export type ParsedInstruction = {
+  parsed: {
+    info: TokenTransferInfo
+    type: string
+  }
+  program: string
+  programId: PublicKey
+  stackHeight: number
+}
+
+export type InnerInstruction = {
+  index: number
+  instructions: ParsedInstruction[]
+}
+
+export type UiTokenAmount = {
+  amount: string
+  decimals: number
+  uiAmount: number
+  uiAmountString: string
+}
+
+export type PostOrPreTokenBalance = {
+  accountIndex: number
+  mint: string
+  owner: string
+  programId: string
+  uiTokenAmount: UiTokenAmount
+}
+
+export type TransactionMeta = {
+  computeUnitsConsumed: number
+  err: null | any // 'any' can be replaced with a more specific error type if available
+  fee: number
+  innerInstructions: InnerInstruction[]
+  logMessages: string[]
+  postBalances: number[]
+  postTokenBalances: PostOrPreTokenBalance[]
+  preBalances: number[]
+  preTokenBalances: PostOrPreTokenBalance[]
+  rewards: any[] // 'any' can be replaced with a more specific reward type if available
+  status: { Ok: null } | any // 'any' can be replaced with a more specific status type if available
+  loadedAddresses: any // 'any' can be replaced with a more specific type if available
+}
+
+export type TransactionMessage = {
+  accountKeys: {
+    pubkey: PublicKey
+    signer: boolean
+    source: string
+    writable: boolean
+  }[]
+  instructions: any[] // Replace 'any' with a more specific instruction type if available
+  recentBlockhash: string
+  addressTableLookups: any // Replace 'any' with a more specific type if available
+}
+
+export type SolanaTransaction = {
+  blockTime: number
+  meta: TransactionMeta
+  slot: number
+  transaction: {
+    message: TransactionMessage
+    signatures: string[]
+  }
+  version: any // Replace 'any' with a more specific version type if available
+}
+
+export type TokenExchange = {
+  owner: string
+  direction: 'buy' | 'sell'
+  token1: string
+  token1Amount: number
+  token2: string
+  token2Amount: number
 }
