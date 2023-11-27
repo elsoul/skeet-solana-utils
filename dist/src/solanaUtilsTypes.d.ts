@@ -1,3 +1,4 @@
+import { PublicKey } from '@solana/web3.js';
 /**
  * Parameters representing a stake reward.
  */
@@ -167,4 +168,81 @@ export type RewardDataResponse = {
     totalRewardAmount: number;
     totalBalance: number;
     rewards: StakeRewardParams[];
+};
+export type TokenTransferInfo = {
+    amount: string;
+    authority: string;
+    destination: string;
+    source: string;
+};
+export type ParsedInstruction = {
+    parsed: {
+        info: TokenTransferInfo;
+        type: string;
+    };
+    program: string;
+    programId: PublicKey;
+    stackHeight: number;
+};
+export type InnerInstruction = {
+    index: number;
+    instructions: ParsedInstruction[];
+};
+export type UiTokenAmount = {
+    amount: string;
+    decimals: number;
+    uiAmount: number;
+    uiAmountString: string;
+};
+export type PostOrPreTokenBalance = {
+    accountIndex: number;
+    mint: string;
+    owner: string;
+    programId: string;
+    uiTokenAmount: UiTokenAmount;
+};
+export type TransactionMeta = {
+    computeUnitsConsumed: number;
+    err: null | any;
+    fee: number;
+    innerInstructions: InnerInstruction[];
+    logMessages: string[];
+    postBalances: number[];
+    postTokenBalances: PostOrPreTokenBalance[];
+    preBalances: number[];
+    preTokenBalances: PostOrPreTokenBalance[];
+    rewards: any[];
+    status: {
+        Ok: null;
+    } | any;
+    loadedAddresses: any;
+};
+export type TransactionMessage = {
+    accountKeys: {
+        pubkey: PublicKey;
+        signer: boolean;
+        source: string;
+        writable: boolean;
+    }[];
+    instructions: any[];
+    recentBlockhash: string;
+    addressTableLookups: any;
+};
+export type SolanaTransaction = {
+    blockTime: number;
+    meta: TransactionMeta;
+    slot: number;
+    transaction: {
+        message: TransactionMessage;
+        signatures: string[];
+    };
+    version: any;
+};
+export type TokenExchange = {
+    owner: string;
+    direction: 'buy' | 'sell';
+    token1: string;
+    token1Amount: number;
+    token2: string;
+    token2Amount: number;
 };
