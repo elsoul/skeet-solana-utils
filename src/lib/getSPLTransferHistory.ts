@@ -1,4 +1,6 @@
 import { Connection, PublicKey, ConfirmedSignatureInfo } from '@solana/web3.js'
+import { writeFileSync } from 'fs'
+import { exit } from 'process'
 
 /**
  * Fetches the SPL Transfer history for a given wallet address.
