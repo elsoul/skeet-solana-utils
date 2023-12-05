@@ -43,38 +43,3 @@ export const getSPLTransferHistory = async (
 
   return transferHistory
 }
-import dotenv from 'dotenv'
-dotenv.config()
-
-const run = async () => {
-  const rpcUrl = process.env.ENDPOINT || 'https://api.mainnet-beta.solana.com'
-  console.log(`Using endpoint: ${rpcUrl}`)
-  const accountAddress = 'GFC7ZCkgHqWqvSoMG6DRG4XJGMgWsBpGspBQXhrSmRab'
-
-  let transfersNum = 0
-  let i = 0
-  const transfers = await getSPLTransferHistory(rpcUrl, accountAddress, 1000)
-  transfersNum = transfers.length
-  while (transfersNum === 1000) {
-    try {
-      i++
-      console.log(`Fetching page ${i}...`)
-      const lastTransfer = transfers[transfers.length - 1]
-      const nextTransfers = await getSPLTransferHistory(
-        rpcUrl,
-        accountAddress,
-        1000,
-        lastTransfer.signature,
-      )
-      transfersNum = nextTransfers.length
-      transfers.push(...nextTransfers)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  const outputFile = `./data/${accountAddress}.json`
-  writeFileSync(outputFile, JSON.stringify(transfers, null, 2))
-  console.log(`Wrote ${transfers.length} transfers to ${outputFile}`)
-}
-
-run()
