@@ -286,3 +286,18 @@ export type TokenExchange = {
   token2: string
   token2Amount: number
 }
+
+export type SPLTransferHistoryResponse = {
+  blockTime: number
+  confirmationStatus: string
+  err: null | any
+  memo: null | string
+  signature: string
+  slot: number
+}
+
+export type SolTransferDetailsResponse = {
+  destination: string
+  lamports: number
+  source: string
+}
