@@ -13,7 +13,7 @@ export { delegateStake } from './lib/delegateStake';
 export { getAllStakeRewardsByPubkey } from './lib/getAllStakeRewardsByPubkey';
 export { getCurrentEpoch } from './lib/getCurrentEpoch';
 export { createStakeAccount } from './lib/createStakeAccount';
-export { getTokenTransferDetails } from './lib/getTokenTransferDetails';
+export { getSolTransferDetails } from './lib/getSolTransferDetails';
 export { getSPLTransferHistory } from './lib/getSPLTransferHistory';
 export type * from './solanaUtilsTypes';
 export { MAGIC_EDEN_ADDRESS } from './lib/getMagicEdenOwner';
