@@ -33,6 +33,10 @@ export const getSolTransferDetails = async (
       signature,
     )) as unknown as SolanaTransaction
 
+    if (!!transactionDetails.meta?.err) {
+      throw new Error(`Transaction failed: ${signature}`)
+    }
+
     const tokenTransferDetails =
       transactionDetails.transaction.message.instructions.find(
         (instruction) => instruction?.parsed?.type === 'transfer',
