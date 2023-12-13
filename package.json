@@ -1,6 +1,6 @@
 {
   "name": "@skeet-framework/solana-utils",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Skeet Framework Plugin - Solana Utils",
   "main": "dist/index.js",
   "types": "dist/src/index.d.ts",
