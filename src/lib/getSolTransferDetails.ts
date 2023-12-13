@@ -33,10 +33,6 @@ export const getSolTransferDetails = async (
       signature,
     )) as unknown as SolanaTransaction
 
-    if (!!transactionDetails?.meta?.err) {
-      throw new Error(`Transaction failed: ${signature}`)
-    }
-
     const tokenTransferDetails =
       transactionDetails.transaction.message.instructions.find(
         (instruction) => instruction?.parsed?.type === 'transfer',
@@ -47,3 +43,14 @@ export const getSolTransferDetails = async (
     throw new Error(`getSolTransferDetails: ${error}`)
   }
 }
+
+const rpcUrl = 'https://api.mainnet-beta.solana.com'
+const signature =
+  '2HJ4zRiZCAusTtZx1bgB6AQCLZwhWReYQKTMsep4upRhTGniPJK38hgFkmbgEHSbDzZnQd81yAzJX5uRdUT9efQn' // Example transaction signature
+
+const run = async () => {
+  const transferDetails = await getSolTransferDetails(rpcUrl, signature)
+  console.log(transferDetails)
+}
+
+run()
