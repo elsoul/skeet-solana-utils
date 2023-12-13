@@ -12,7 +12,7 @@ import { SolTransferDetailsResponse } from '..';
  * const rpcUrl = 'https://api.mainnet-beta.solana.com';
  * const signature = '5verv...'; // Example transaction signature
  *
- * const transferDetails = await getTokenTransferDetails(rpcUrl, signature);
+ * const transferDetails = await getSolTransferDetails(rpcUrl, signature);
  * console.log(transferDetails);
  * ```
  */
