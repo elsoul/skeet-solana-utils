@@ -18,7 +18,7 @@ import {
  * const rpcUrl = 'https://api.mainnet-beta.solana.com';
  * const signature = '5verv...'; // Example transaction signature
  *
- * const transferDetails = await getTokenTransferDetails(rpcUrl, signature);
+ * const transferDetails = await getSolTransferDetails(rpcUrl, signature);
  * console.log(transferDetails);
  * ```
  */
@@ -33,7 +33,7 @@ export const getSolTransferDetails = async (
       signature,
     )) as unknown as SolanaTransaction
 
-    if (!!transactionDetails.meta?.err) {
+    if (!!transactionDetails?.meta?.err) {
       throw new Error(`Transaction failed: ${signature}`)
     }
 
